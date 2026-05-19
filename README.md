@@ -144,35 +144,3 @@ vue3-compare-json/
 ## License
 
 [MIT](./LICENSE)
-
----
-
-## Русский
-
-Небольшой компонент на Vue 3 + TypeScript, который сравнивает два JSON-значения
-и показывает разницу в виде unified-diff в стиле GitHub: подкрашенные строки,
-колонки с номерами, знаки `+` / `-` и статистика в шапке.
-
-### Установка
-
-```bash
-npm install vue3-compare-json
-```
-
-### Использование
-
-```vue
-<script setup lang="ts">
-import { VueJsonCompare, type JsonValue } from 'vue3-compare-json'
-import 'vue3-compare-json/style.css'
-
-const oldData: JsonValue = { name: 'Lex' }
-const newData: JsonValue = { name: 'Aleksey' }
-</script>
-
-<template>
-  <VueJsonCompare :old-data="oldData" :new-data="newData" />
-</template>
-```
-
-Полный список пропсов и переменных стиля — в английской части выше.
