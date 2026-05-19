@@ -20,7 +20,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'VueJsonCompare',
       fileName: (format) =>
-        format === 'es' ? 'vue3-compare-json.js' : `vue3-compare-json.${format}.cjs`,
+        format === 'es' ? 'index.js' : `index.${format}.cjs`,
       formats: ['es', 'umd'],
     },
     rollupOptions: {
@@ -29,7 +29,7 @@ export default defineConfig({
         globals: { vue: 'Vue' },
         exports: 'named',
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name === 'style.css') return 'vue3-compare-json.css'
+          if (assetInfo.name === 'style.css') return 'index.css'
           return assetInfo.name ?? 'asset-[hash][extname]'
         },
       },

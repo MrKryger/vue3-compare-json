@@ -3,17 +3,17 @@
   "version": "0.1.0",
   "description": "Vue 3 component for comparing JSON data with a GitHub-style diff view.",
   "type": "module",
-  "main": "./dist/vue3-compare-json.umd.cjs",
-  "module": "./dist/vue3-compare-json.js",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/vue3-compare-json.js",
-      "require": "./dist/vue3-compare-json.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     },
-    "./style.css": "./dist/vue3-compare-json.css",
-    "./dist/style.css": "./dist/vue3-compare-json.css"
+    "./style.css": "./dist/index.css",
+    "./dist/style.css": "./dist/index.css"
   },
   "files": [
     "dist",
@@ -44,12 +44,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/vue3-compare-json.git"
+    "url": "git+https://github.com/MrKryger/vue3-compare-json.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/vue3-compare-json/issues"
+    "url": "https://github.com/MrKryger/vue3-compare-json/issues"
   },
-  "homepage": "https://github.com/your-username/vue3-compare-json#readme",
+  "homepage": "https://github.com/MrKryger/vue3-compare-json#readme",
   "peerDependencies": {
     "vue": "^3.3.0"
   },
