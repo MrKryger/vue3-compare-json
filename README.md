@@ -1,4 +1,4 @@
-# vue-json-compare
+# vue3-compare-json
 
 A small Vue 3 + TypeScript component that compares two JSON values and renders
 the differences as a GitHub-style unified diff — colored row backgrounds,
@@ -18,11 +18,11 @@ two-column line-number gutter, `+`/`-` signs and a stats header.
 ## Installation
 
 ```bash
-npm install vue-json-compare
+npm install vue3-compare-json
 # or
-pnpm add vue-json-compare
+pnpm add vue3-compare-json
 # or
-yarn add vue-json-compare
+yarn add vue3-compare-json
 ```
 
 > The package requires `vue@^3.3` as a peer dependency.
@@ -33,8 +33,8 @@ yarn add vue-json-compare
 
 ```vue
 <script setup lang="ts">
-import { VueJsonCompare, type JsonValue } from 'vue-json-compare'
-import 'vue-json-compare/style.css'
+import { VueJsonCompare, type JsonValue } from 'vue3-compare-json'
+import 'vue3-compare-json/style.css'
 
 const oldData: JsonValue = { name: 'Lex', roles: ['admin'] }
 const newData: JsonValue = { name: 'Aleksey', roles: ['admin', 'owner'] }
@@ -50,8 +50,8 @@ const newData: JsonValue = { name: 'Aleksey', roles: ['admin', 'owner'] }
 ```ts
 // main.ts
 import { createApp } from 'vue'
-import VueJsonComparePlugin from 'vue-json-compare'
-import 'vue-json-compare/style.css'
+import VueJsonComparePlugin from 'vue3-compare-json'
+import 'vue3-compare-json/style.css'
 import App from './App.vue'
 
 createApp(App).use(VueJsonComparePlugin).mount('#app')
@@ -59,7 +59,7 @@ createApp(App).use(VueJsonComparePlugin).mount('#app')
 
 ```vue
 <template>
-  <vue-json-compare :old-data="oldData" :new-data="newData" />
+  <vue3-compare-json :old-data="oldData" :new-data="newData" />
 </template>
 ```
 
@@ -109,8 +109,8 @@ Full list of variables: `--vjc-font-family`, `--vjc-font-size`,
 ## Development
 
 ```bash
-git clone https://github.com/your-username/vue-json-compare.git
-cd vue-json-compare
+git clone https://github.com/your-username/vue3-compare-json.git
+cd vue3-compare-json
 npm install
 npm run dev       # starts the playground at /playground/index.html
 npm run build     # type-checks and builds the library into dist/
@@ -123,7 +123,7 @@ edit to `src/components/VueJsonCompare.vue` is reflected immediately.
 ## Project structure
 
 ```
-vue-json-compare/
+vue3-compare-json/
 ├── src/
 │   ├── components/
 │   │   └── VueJsonCompare.vue   # the component
@@ -156,15 +156,15 @@ vue-json-compare/
 ### Установка
 
 ```bash
-npm install vue-json-compare
+npm install vue3-compare-json
 ```
 
 ### Использование
 
 ```vue
 <script setup lang="ts">
-import { VueJsonCompare, type JsonValue } from 'vue-json-compare'
-import 'vue-json-compare/style.css'
+import { VueJsonCompare, type JsonValue } from 'vue3-compare-json'
+import 'vue3-compare-json/style.css'
 
 const oldData: JsonValue = { name: 'Lex' }
 const newData: JsonValue = { name: 'Aleksey' }
