@@ -1,0 +1,64 @@
+{
+  "name": "vue3-compare-json",
+  "version": "0.1.0",
+  "description": "Vue 3 component for comparing JSON data with a GitHub-style diff view.",
+  "type": "module",
+  "main": "./dist/vue3-compare-json.umd.cjs",
+  "module": "./dist/vue3-compare-json.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vue3-compare-json.js",
+      "require": "./dist/vue3-compare-json.umd.cjs"
+    },
+    "./style.css": "./dist/vue3-compare-json.css",
+    "./dist/style.css": "./dist/vue3-compare-json.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css",
+    "**/*.vue"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "json",
+    "diff",
+    "compare",
+    "github-style",
+    "typescript",
+    "component"
+  ],
+  "author": "MrKryger",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/vue3-compare-json.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/vue3-compare-json/issues"
+  },
+  "homepage": "https://github.com/your-username/vue3-compare-json#readme",
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.0",
+    "vue": "^3.4.0",
+    "vue-tsc": "^2.0.0"
+  }
+}

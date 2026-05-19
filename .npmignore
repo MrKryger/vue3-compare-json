@@ -1,0 +1,15 @@
+src
+playground
+node_modules
+.github
+
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+env.d.ts
+.gitignore
+.npmignore
+
+*.log
+.DS_Store
+coverage
