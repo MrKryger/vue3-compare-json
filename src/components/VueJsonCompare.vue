@@ -319,11 +319,6 @@ function signFor(t: DiffType): string {
   --vjc-removed-fg: #cf222e;
 }
 
-.vjc--theme-dark,
-.vjc--theme-auto {
-  /* dark palette applied below conditionally */
-}
-
 .vjc--theme-dark {
   --vjc-fg: #e6edf3;
   --vjc-bg: #0d1117;
@@ -416,10 +411,6 @@ function signFor(t: DiffType): string {
   align-items: stretch;
   min-height: var(--vjc-line-height);
   white-space: nowrap;
-}
-
-.vjc__row:has(.vjc__gutter:nth-of-type(2)) {
-  /* default layout has two gutters; no-op rule kept for clarity */
 }
 
 /* When line numbers are hidden, collapse the gutter columns. */
