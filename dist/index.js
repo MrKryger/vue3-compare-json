@@ -1,11 +1,11 @@
-import { defineComponent as J, computed as b, openBlock as i, createElementBlock as f, normalizeClass as k, createElementVNode as d, toDisplayString as h, createCommentVNode as _, Fragment as B, renderList as $, normalizeStyle as C } from "vue";
-const q = {
+import { defineComponent as $, computed as b, openBlock as f, createElementBlock as h, normalizeClass as k, createElementVNode as d, toDisplayString as l, createCommentVNode as _, Fragment as B, renderList as C, normalizeStyle as q } from "vue";
+const z = {
   key: 0,
   class: "vjc__header"
-}, z = { class: "vjc__title" }, F = { class: "vjc__stats" }, H = { class: "vjc__stat vjc__stat--added" }, K = { class: "vjc__stat vjc__stat--removed" }, M = {
+}, F = { class: "vjc__title" }, H = { class: "vjc__stats" }, K = { class: "vjc__stat vjc__stat--added" }, M = { class: "vjc__stat vjc__stat--removed" }, G = {
   key: 0,
   class: "vjc__stat vjc__stat--equal"
-}, G = { class: "vjc__body" }, I = { class: "vjc__gutter vjc__gutter--old" }, Q = { key: 0 }, R = { class: "vjc__gutter vjc__gutter--new" }, T = { key: 0 }, U = { class: "vjc__sign" }, W = /* @__PURE__ */ J({
+}, I = { class: "vjc__body" }, Q = { class: "vjc__gutter vjc__gutter--old" }, R = { key: 0 }, T = { class: "vjc__gutter vjc__gutter--new" }, U = { key: 0 }, W = { class: "vjc__sign" }, S = /* @__PURE__ */ $({
   __name: "VueJsonCompare",
   props: {
     oldData: { type: [String, Number, Boolean, null, Array, Object] },
@@ -16,96 +16,96 @@ const q = {
     title: { default: "JSON diff" },
     noChangesLabel: { default: "No changes" }
   },
-  setup(l) {
-    const j = l;
-    function O(t) {
-      return t !== null && typeof t == "object" && !Array.isArray(t);
+  setup(i) {
+    const g = i;
+    function O(e) {
+      return e !== null && typeof e == "object" && !Array.isArray(e);
     }
-    function m(t, r) {
-      if (t === r) return !0;
-      if (typeof t != typeof r) return !1;
-      if (t === null || r === null) return t === r;
-      if (typeof t != "object" || Array.isArray(t) !== Array.isArray(r)) return !1;
-      if (Array.isArray(t) && Array.isArray(r)) {
-        if (t.length !== r.length) return !1;
-        for (let e = 0; e < t.length; e++)
-          if (!m(t[e], r[e])) return !1;
+    function m(e, r) {
+      if (e === r) return !0;
+      if (typeof e != typeof r) return !1;
+      if (e === null || r === null) return e === r;
+      if (typeof e != "object" || Array.isArray(e) !== Array.isArray(r)) return !1;
+      if (Array.isArray(e) && Array.isArray(r)) {
+        if (e.length !== r.length) return !1;
+        for (let t = 0; t < e.length; t++)
+          if (!m(e[t], r[t])) return !1;
         return !0;
       }
-      const o = t, n = r, u = Object.keys(o), s = Object.keys(n);
+      const o = e, n = r, u = Object.keys(o), s = Object.keys(n);
       if (u.length !== s.length) return !1;
-      for (const e of u)
-        if (!Object.prototype.hasOwnProperty.call(n, e) || !m(o[e], n[e])) return !1;
+      for (const t of u)
+        if (!Object.prototype.hasOwnProperty.call(n, t) || !m(o[t], n[t])) return !1;
       return !0;
     }
-    function S(t) {
-      return t === void 0 ? "undefined" : JSON.stringify(t);
+    function w(e) {
+      return e === void 0 ? "undefined" : JSON.stringify(e);
     }
-    function y(t, r, o) {
-      const n = [], u = (s, e, c, a) => {
+    function y(e, r, o) {
+      const n = [], u = (s, t, c, a) => {
         if (s === null || typeof s != "object") {
           n.push({
-            content: e + S(s) + (a ? "," : ""),
+            content: t + w(s) + (a ? "," : ""),
             indent: c
           });
           return;
         }
         if (Array.isArray(s)) {
           if (s.length === 0) {
-            n.push({ content: e + "[]" + (a ? "," : ""), indent: c });
+            n.push({ content: t + "[]" + (a ? "," : ""), indent: c });
             return;
           }
-          n.push({ content: e + "[", indent: c }), s.forEach((g, L) => u(g, "", c + 1, L < s.length - 1)), n.push({ content: "]" + (a ? "," : ""), indent: c });
+          n.push({ content: t + "[", indent: c }), s.forEach((j, L) => u(j, "", c + 1, L < s.length - 1)), n.push({ content: "]" + (a ? "," : ""), indent: c });
           return;
         }
         const v = s, N = Object.keys(v);
         if (N.length === 0) {
-          n.push({ content: e + "{}" + (a ? "," : ""), indent: c });
+          n.push({ content: t + "{}" + (a ? "," : ""), indent: c });
           return;
         }
-        n.push({ content: e + "{", indent: c }), N.forEach(
-          (g, L) => u(v[g], `"${g}": `, c + 1, L < N.length - 1)
+        n.push({ content: t + "{", indent: c }), N.forEach(
+          (j, L) => u(v[j], `"${j}": `, c + 1, L < N.length - 1)
         ), n.push({ content: "}" + (a ? "," : ""), indent: c });
       };
-      return u(t, r, 0, o), n;
+      return u(e, r, 0, o), n;
     }
-    function A(t, r, o, n, u, s) {
-      if (!(t === void 0 && r === void 0)) {
-        if (t === void 0) {
+    function A(e, r, o, n, u, s) {
+      if (!(e === void 0 && r === void 0)) {
+        if (e === void 0) {
           y(r, o, u).forEach(
-            (e) => s.push({ type: "added", content: e.content, indent: n + e.indent })
+            (t) => s.push({ type: "added", content: t.content, indent: n + t.indent })
           );
           return;
         }
         if (r === void 0) {
-          y(t, o, u).forEach(
-            (e) => s.push({
+          y(e, o, u).forEach(
+            (t) => s.push({
               type: "removed",
-              content: e.content,
-              indent: n + e.indent
+              content: t.content,
+              indent: n + t.indent
             })
           );
           return;
         }
-        if (m(t, r)) {
+        if (m(e, r)) {
           y(r, o, u).forEach(
-            (e) => s.push({
+            (t) => s.push({
               type: "unchanged",
-              content: e.content,
-              indent: n + e.indent
+              content: t.content,
+              indent: n + t.indent
             })
           );
           return;
         }
-        if (O(t) && O(r)) {
+        if (O(e) && O(r)) {
           s.push({ type: "unchanged", content: o + "{", indent: n });
-          const e = Array.from(
-            /* @__PURE__ */ new Set([...Object.keys(t), ...Object.keys(r)])
+          const t = Array.from(
+            /* @__PURE__ */ new Set([...Object.keys(e), ...Object.keys(r)])
           );
-          e.forEach((c, a) => {
-            const v = a === e.length - 1;
+          t.forEach((c, a) => {
+            const v = a === t.length - 1;
             A(
-              t[c],
+              e[c],
               r[c],
               `"${c}": `,
               n + 1,
@@ -119,12 +119,12 @@ const q = {
           });
           return;
         }
-        if (Array.isArray(t) && Array.isArray(r)) {
+        if (Array.isArray(e) && Array.isArray(r)) {
           s.push({ type: "unchanged", content: o + "[", indent: n });
-          const e = Math.max(t.length, r.length);
-          for (let c = 0; c < e; c++) {
-            const a = c === e - 1;
-            A(t[c], r[c], "", n + 1, !a, s);
+          const t = Math.max(e.length, r.length);
+          for (let c = 0; c < t; c++) {
+            const a = c === t - 1;
+            A(e[c], r[c], "", n + 1, !a, s);
           }
           s.push({
             type: "unchanged",
@@ -133,77 +133,77 @@ const q = {
           });
           return;
         }
-        y(t, o, u).forEach(
-          (e) => s.push({
+        y(e, o, u).forEach(
+          (t) => s.push({
             type: "removed",
-            content: e.content,
-            indent: n + e.indent
+            content: t.content,
+            indent: n + t.indent
           })
         ), y(r, o, u).forEach(
-          (e) => s.push({
+          (t) => s.push({
             type: "added",
-            content: e.content,
-            indent: n + e.indent
+            content: t.content,
+            indent: n + t.indent
           })
         );
       }
     }
     const E = b(() => {
-      const t = [];
-      A(j.oldData, j.newData, "", 0, !1, t);
+      const e = [];
+      A(g.oldData, g.newData, "", 0, !1, e);
       let r = 1, o = 1;
-      for (const n of t)
+      for (const n of e)
         n.type === "removed" ? n.oldLineNum = r++ : (n.type === "added" || (n.oldLineNum = r++), n.newLineNum = o++);
-      return t;
+      return e;
     }), p = b(() => {
-      let t = 0, r = 0;
+      let e = 0, r = 0;
       for (const o of E.value)
-        o.type === "added" ? t++ : o.type === "removed" && r++;
-      return { added: t, removed: r };
-    }), w = b(() => `vjc--theme-${j.theme}`);
-    function D(t) {
-      return t === "added" ? "+" : t === "removed" ? "-" : " ";
+        o.type === "added" ? e++ : o.type === "removed" && r++;
+      return { added: e, removed: r };
+    }), D = b(() => `vjc--theme-${g.theme}`);
+    function J(e) {
+      return e === "added" ? "+" : e === "removed" ? "-" : " ";
     }
-    return (t, r) => (i(), f("div", {
-      class: k(["vjc", w.value])
+    return (e, r) => (f(), h("div", {
+      class: k(["vjc", D.value])
     }, [
-      l.showHeader ? (i(), f("div", q, [
-        d("span", z, h(l.title), 1),
-        d("span", F, [
-          d("span", H, "+" + h(p.value.added), 1),
-          d("span", K, "-" + h(p.value.removed), 1),
-          p.value.added === 0 && p.value.removed === 0 ? (i(), f("span", M, h(l.noChangesLabel), 1)) : _("", !0)
+      i.showHeader ? (f(), h("div", z, [
+        d("span", F, l(i.title), 1),
+        d("span", H, [
+          d("span", K, "+" + l(p.value.added), 1),
+          d("span", M, "-" + l(p.value.removed), 1),
+          p.value.added === 0 && p.value.removed === 0 ? (f(), h("span", G, l(i.noChangesLabel), 1)) : _("", !0)
         ])
       ])) : _("", !0),
-      d("div", G, [
-        (i(!0), f(B, null, $(E.value, (o, n) => (i(), f("div", {
+      d("div", I, [
+        (f(!0), h(B, null, C(E.value, (o, n) => (f(), h("div", {
           key: n,
           class: k(["vjc__row", `vjc__row--${o.type}`])
         }, [
-          l.showLineNumbers ? (i(), f(B, { key: 0 }, [
-            d("div", I, [
-              o.oldLineNum !== void 0 ? (i(), f("span", Q, h(o.oldLineNum), 1)) : _("", !0)
+          i.showLineNumbers ? (f(), h(B, { key: 0 }, [
+            d("div", Q, [
+              o.oldLineNum !== void 0 ? (f(), h("span", R, l(o.oldLineNum), 1)) : _("", !0)
             ]),
-            d("div", R, [
-              o.newLineNum !== void 0 ? (i(), f("span", T, h(o.newLineNum), 1)) : _("", !0)
+            d("div", T, [
+              o.newLineNum !== void 0 ? (f(), h("span", U, l(o.newLineNum), 1)) : _("", !0)
             ])
           ], 64)) : _("", !0),
-          d("div", U, h(D(o.type)), 1),
+          d("div", W, l(J(o.type)), 1),
           d("div", {
             class: "vjc__code",
-            style: C({ paddingLeft: o.indent * 20 + 8 + "px" })
-          }, h(o.content), 5)
+            style: q({ paddingLeft: o.indent * 20 + 8 + "px" })
+          }, l(o.content), 5)
         ], 2))), 128))
       ])
     ], 2));
   }
 }), Y = {
-  install(l) {
-    l.component("VueJsonCompare", W);
+  install(i) {
+    i.component("VueJsonCompare", S), i.component("vue3-compare-json", S);
   }
 };
 export {
-  W as VueJsonCompare,
+  S as VueJsonCompare,
   Y as default
 };
 //# sourceMappingURL=index.js.map

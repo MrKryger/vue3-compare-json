@@ -4,7 +4,10 @@ import { default as VueJsonCompare } from './components/VueJsonCompare.vue';
 export { VueJsonCompare };
 export type { JsonValue, VueJsonCompareTheme } from './types';
 /**
- * Vue plugin install function. Registers `<vue3-compare-json>` globally.
+ * Vue plugin install function. Registers the component globally under two
+ * names so both PascalCase and the package name work in templates:
+ *   - `<VueJsonCompare>` / `<vue-json-compare>`
+ *   - `<vue3-compare-json>`
  *
  * @example
  *   import { createApp } from 'vue'
