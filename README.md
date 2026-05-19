@@ -4,8 +4,6 @@ A small Vue 3 + TypeScript component that compares two JSON values and renders
 the differences as a GitHub-style unified diff — colored row backgrounds,
 two-column line-number gutter, `+`/`-` signs and a stats header.
 
-> Read this in another language: [Русский](#русский)
-
 ## Features
 
 - Vue 3, `<script setup lang="ts">`, no runtime dependencies beyond Vue.
