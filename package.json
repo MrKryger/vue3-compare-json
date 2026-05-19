@@ -1,6 +1,6 @@
 {
   "name": "vue3-compare-json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vue 3 component for comparing JSON data with a GitHub-style diff view.",
   "type": "module",
   "main": "./dist/index.umd.cjs",
