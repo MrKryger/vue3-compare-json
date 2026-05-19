@@ -10,10 +10,21 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
+      "require": "./dist/index.umd.cjs",
+      "default": "./dist/index.js"
     },
-    "./style.css": "./dist/index.css",
-    "./dist/style.css": "./dist/index.css"
+    "./style.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css",
+      "default": "./dist/index.css"
+    },
+    "./dist/style.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css",
+      "default": "./dist/index.css"
+    },
+    "./dist/index.css": "./dist/index.css",
+    "./package.json": "./package.json"
   },
   "files": [
     "dist",
