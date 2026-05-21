@@ -61,6 +61,8 @@ createApp(App).use(VueJsonComparePlugin).mount('#app')
 </template>
 ```
 
+![img.png](img.png)
+
 ## Props
 
 | Prop               | Type                        | Default       | Description                                                  |
